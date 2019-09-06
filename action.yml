@@ -2,10 +2,9 @@ name: 'dotnet-build-action'
 description: Build dotnet app
 author: Felipe Crochik
 inputs:
-  build_context:
-    description: the path in your repo that will serve as the build context
+  project_path:
+    description: relative path to the project file
     require: true
-    default: './'
 branding:
   color: 'green'
   icon: 'layers'
