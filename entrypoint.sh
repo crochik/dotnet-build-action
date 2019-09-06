@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "First one"
+echo "Second"
 echo ${GITHUB_WORKSPACE}
 echo ${INPUT_PROJECT_PATH}
 
