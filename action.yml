@@ -1,0 +1,14 @@
+name: 'dotnet-build-action'
+description: Build dotnet app
+author: Felipe Crochik
+inputs:
+  build_context:
+    description: the path in your repo that will serve as the build context
+    require: true
+    default: './'
+branding:
+  color: 'blue'
+  icon: 'layers'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
