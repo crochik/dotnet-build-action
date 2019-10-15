@@ -13,4 +13,6 @@ nuget sources Add -Name "Github" \
      -Source "https://nuget.pkg.github.com/crochik/index.json" \
      -UserName crochik -Password ${GITHUB_TOKEN} \
 
+nuget push ${GITHUB_WORKSPACE}/bin/Debug/Crochik.NET.1.0.0.nupkg -Source "Github"
+
 find ${GITHUB_WORKSPACE}/build
