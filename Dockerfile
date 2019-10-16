@@ -9,9 +9,9 @@ LABEL "repository"="https://github.com/crochik/dotnet-build-action"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="Felipe Crochik <felipe@crochik.com>"
 
-RUN apt-get update \
-  && apt-get upgrade -y \
-  && apt-get install nuget -y
+# RUN apt-get update \
+#   && apt-get upgrade -y \
+#   && apt-get install nuget -y
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
