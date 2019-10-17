@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 echo "Building: ${GITHUB_WORKSPACE}/${INPUT_PROJECT_PATH}"
 
-if [[ -f "nuget.config" && -n "$GITHUB_TOKEN" ]]
+if [[ -f "nuput.config" && -n "$GITHUB_TOKEN" ]]
 then
     echo "Injecting GITHUB_TOKEN in nuget.config..."
     REGEX="s/\${{GITHUB_TOKEN}}/${GITHUB_TOKEN}/"
-    sed -i '' $REGEX nuget.config
+    sed $REGEX nuget.config > nuget.config
 fi
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1

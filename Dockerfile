@@ -16,4 +16,5 @@ LABEL "maintainer"="Felipe Crochik <felipe@crochik.com>"
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+SHELL ["/bin/bash", "-c"]
 ENTRYPOINT ["/entrypoint.sh"]
