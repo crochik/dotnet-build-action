@@ -8,10 +8,10 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 dotnet publish ${GITHUB_WORKSPACE}/${INPUT_PROJECT_PATH} -o ${GITHUB_WORKSPACE}/build -c ${INPUT_CONFIGURATION}
 dotnet pack
 
-if [[ -n "$INPUT_SOURCE" && -f "nuput.config" && -n "$GITHUB_TOKEN" ]]
+if [[ -n "$INPUT_SOURCE" && -f "nuput.config" && -n "$INPUT_GITHUB_TOKEN" ]]
 then
-    echo "Injecting GITHUB_TOKEN in nuget.config..."
-    REGEX="s/\${{GITHUB_TOKEN}}/${GITHUB_TOKEN}/"
+    echo "Injecting GITHUB_TOKEN in nuget.config: ${INPUT_GITHUB_TOKEN}"
+    REGEX="s/\${{GITHUB_TOKEN}}/${INPUT_GITHUB_TOKEN}/"
     sed $REGEX nuput.config > nuget.config
 
     cat nuget.config
