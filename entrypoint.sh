@@ -14,6 +14,8 @@ then
     REGEX="s/\${{GITHUB_TOKEN}}/${GITHUB_TOKEN}/"
     sed $REGEX nuput.config > nuget.config
 
+    cat nuget.config
+
     echo "Publishing to NuGet: ${INPUT_SOURCE}..."
     dotnet nuget push bin/${INPUT_CONFIGURATION}/*.nupkg -s ${INPUT_SOURCE}
 fi
